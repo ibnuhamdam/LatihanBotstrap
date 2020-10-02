@@ -22,6 +22,7 @@ $(window).on('load', function(){
 });
 
 //parallax
+$('.form-contact').hide();
 $(window).scroll(function() {
 	var wScroll = $(this).scrollTop();
 
@@ -48,9 +49,11 @@ $(window).scroll(function() {
 			}, 300 * (i+1));
 		});
 
-		
-
 	}
 
+	if(wScroll > $('.contact').offset().top - 250 ){
+		$('.form-contact').show();
+		$('.form-contact').addClass('animate__animated animate__fadeInUp');
+	}
 
 });
